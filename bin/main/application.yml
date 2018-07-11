@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: citybank
+  datasource:
+    driver-class-name: oracle.jdbc.driver.OracleDriver
+    url: jdbc:oracle:thin:@10.164.16.94:1521:orcl
+    username: scott
+    password: tiger
+  redis:
+    cluster:
+      nodes:
+      - 10.164.16.94:6379
+      max-redirects: 1
+logging:
+  level:
+    org.springframework: INFO
+mybatis:
+  mapper-locations:
+  - classpath:/mapper/*.xml
+server:
+  port: 9030
