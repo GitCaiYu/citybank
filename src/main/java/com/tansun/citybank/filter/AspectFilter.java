@@ -7,7 +7,6 @@ import java.util.stream.Stream;
 
 import javax.servlet.http.HttpServletRequest;
 
-import org.apache.log4j.Logger;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
@@ -18,6 +17,8 @@ import org.springframework.web.context.request.ServletRequestAttributes;
 
 import com.tansun.citybank.util.ConvertUtil;
 
+import lombok.extern.slf4j.Slf4j;
+
 /**
  * 接口日志切面类
  * 
@@ -26,9 +27,8 @@ import com.tansun.citybank.util.ConvertUtil;
  */
 @Aspect
 @Component
+@Slf4j
 public class AspectFilter {
-
-	private Logger logger = Logger.getLogger(getClass());
 
 	ThreadLocal<Long> startTime = new ThreadLocal<>();
 
@@ -57,20 +57,19 @@ public class AspectFilter {
 						exception = e.getMessage();
 					}
 					if (exception == null) {
-						logger.info("--------------------------------------------------------");
-						logger.info("URL : " + request.getRequestURL().toString());
-						logger.info("HTTP_METHOD : " + request.getMethod());
-						logger.info("IP : " + request.getRemoteAddr());
-						logger.info("CLASS_METHOD : " + stackTrace.getClassName() + "." + stackTrace.getMethodName()
+						log.info("--------------------------------------------------------");
+						log.info("URL : " + request.getRequestURL().toString());
+						log.info("HTTP_METHOD : " + request.getMethod());
+						log.info("IP : " + request.getRemoteAddr());
+						log.info("CLASS_METHOD : " + stackTrace.getClassName() + "." + stackTrace.getMethodName()
 								+ ":" + stackTrace.getLineNumber());
-						logger.info("ARGS : " + Arrays.toString(proceedingJoinPoint.getArgs()));
-						logger.info("RESPONSE : " + ConvertUtil.decode(result.toString()));
-						logger.info("SPEND TIME : " + (System.currentTimeMillis() - startTime.get()));
-						logger.info("--------------------------------------------------------");
+						log.info("ARGS : " + Arrays.toString(proceedingJoinPoint.getArgs()));
+						log.info("RESPONSE : " + ConvertUtil.decode(result.toString()));
+						log.info("SPEND TIME : " + (System.currentTimeMillis() - startTime.get()));
+						log.info("--------------------------------------------------------");
 					} else {
 						// 根据对方系统返回的500级别的处理
 					}
-
 				}
 			});
 		}
