@@ -39,8 +39,8 @@ public class DateUtil {
 	 * @return yyyy-MM-dd hh:mm:ss
 	 */
 	public static String formatFullDateToString(Date date) {
-		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-		String strDate = sdf.format(date);
+		simpleDateFormat.get().applyPattern("yyyy-MM-dd HH:mm:ss");
+		String strDate = simpleDateFormat.get().format(new Date());
 		return strDate;
 	}
 
