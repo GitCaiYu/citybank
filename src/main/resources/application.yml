@@ -9,8 +9,8 @@ spring:
   redis:
     cluster:
       nodes:
-      - 10.164.16.94:6379
-      max-redirects: 1
+      - 127.0.0.1:6379, 127.0.0.1:6380, 127.0.0.1:6381
+      max-redirects: 3
 logging:
   level:
     org.springframework: INFO
