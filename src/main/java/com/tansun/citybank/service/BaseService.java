@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 import com.tansun.citybank.util.HttpUtil;
+import com.tansun.citybank.util.JedisClusterUtil;
 import com.tansun.citybank.util.RedisUtil;
 import com.tansun.citybank.util.RestTemplateUtil;
 
@@ -17,6 +18,9 @@ public class BaseService {
 	
 	@Autowired
 	protected RedisUtil redisUtil;
+	
+	@Autowired
+	protected JedisClusterUtil JedisClusterUtil;
 
 	@Autowired
 	protected HttpUtil httpUtil;
