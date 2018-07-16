@@ -20,7 +20,7 @@ public class BaseService {
 	protected RedisUtil redisUtil;
 	
 	@Autowired
-	protected JedisClusterUtil JedisClusterUtil;
+	protected JedisClusterUtil jedisClusterUtil;
 
 	@Autowired
 	protected HttpUtil httpUtil;
