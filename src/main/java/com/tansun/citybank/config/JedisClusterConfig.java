@@ -16,7 +16,7 @@ public class JedisClusterConfig {
 	@Value("${spring.redis.clusterNodes}")
 	private String clusterNodes;
 
-	@Value("${spring.redis.clusterPassw}")
+	@Value("${spring.redis.password}")
 	private String password;
 
 	public JedisCluster getJedisCluster() {

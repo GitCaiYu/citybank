@@ -1,14 +1,16 @@
 spring:
+  cache:
+    type: redis
   application:
     name: citybank
   datasource:
     driver-class-name: oracle.jdbc.driver.OracleDriver
-    url: jdbc:oracle:thin:@10.164.20.237:1521:orcl
+    url: jdbc:oracle:thin:@127.0.0.1:1521:orcl
     username: scott
     password: tiger
   redis:
-    clusterPassw: citybank
-    clusterNodes: 10.164.20.237:6379,10.164.20.237:6380,10.164.20.237:6381
+    password: citybank
+    clusterNodes: 10.164.16.136:6379,10.164.16.136:6380,10.164.16.136:6381
 logging:
   level:
     org.springframework: INFO

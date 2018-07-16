@@ -48,7 +48,7 @@ public class ConvertUtil {
 	 */
 	public static String decode(String str) {
 		try {
-			if (ConvertUtil.isEmpty(str)) {
+			if (StringUtil.isEmpty(str)) {
 				return "";
 			} else {
 				return new String(str.getBytes("ISO-8859-1"), "UTF-8");
@@ -56,18 +56,5 @@ public class ConvertUtil {
 		} catch (Exception e) {
 			return "";
 		}
-	}
-
-	/**
-	 * ÅÐ¶Ï×Ö·û´®ÊÇ·ñÎª¿Õ
-	 * 
-	 * @param s
-	 * @return
-	 */
-	public static boolean isEmpty(String str) {
-		if (str != null && !str.equals("")) {
-			return false;
-		}
-		return true;
 	}
 }
