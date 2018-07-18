@@ -37,6 +37,7 @@ public class JedisClusterUtil {
 
 	/**
 	 * É¾³ıkeyÊı¾İ
+	 * 
 	 * @param key
 	 * @return
 	 */

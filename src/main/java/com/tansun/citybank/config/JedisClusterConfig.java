@@ -16,13 +16,18 @@ public class JedisClusterConfig {
 	@Value("${spring.jedis.clusterNodes}")
 	private String clusterNodes;
 
-	public JedisCluster getJedisCluster() {
+	private static JedisCluster jedisCluster = null;
+
+	public synchronized JedisCluster getJedisCluster() {
 		String[] serverArray = clusterNodes.split(",");
 		Set<HostAndPort> nodes = new HashSet<>(0);
 		for (String ipPort : serverArray) {
 			String[] ipPortPair = ipPort.split(":");
 			nodes.add(new HostAndPort(ipPortPair[0].trim(), Integer.valueOf(ipPortPair[1].trim())));
 		}
-		return new JedisCluster(nodes, 3000, 3000, 1, new GenericObjectPoolConfig());
+		if (jedisCluster == null) {
+			jedisCluster = new JedisCluster(nodes, 3000, 3000, 1, new GenericObjectPoolConfig());
+		}
+		return jedisCluster;
 	}
 }
