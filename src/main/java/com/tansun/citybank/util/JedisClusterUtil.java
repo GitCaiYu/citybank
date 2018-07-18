@@ -36,6 +36,15 @@ public class JedisClusterUtil {
 	}
 
 	/**
+	 * 删除key数据
+	 * @param key
+	 * @return
+	 */
+	public Long del(String key) {
+		return jedisClusterConfig.getJedisCluster().del(key);
+	}
+
+	/**
 	 * 设置hash数据类型
 	 * 
 	 * @param key   键名

@@ -9,16 +9,13 @@ spring:
     username: scott
     password: tiger
   redis:
-    password: citybank
-    timeout: 60000
     cluster:
-      max-redirects: 3
       nodes:
-      - 127.0.0.1:6379,127.0.0.1:6380,127.0.0.1:6381
+      - 10.164.16.136:6379,10.164.16.136:6380,10.164.16.136:6381
+  jedis:
+    clusterNodes: 10.164.16.136:6379,10.164.16.136:6380,10.164.16.136:6381
   session:
     store-type: redis
-  jedis:
-    clusterNodes: 127.0.0.1:6379,127.0.0.1:6380,127.0.0.1:6381
 logging:
   level:
     org.springframework: INFO
