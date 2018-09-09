@@ -1,0 +1,15 @@
+spring:
+  profiles:
+    active: repo
+  application:
+    name: citybank
+  cloud:
+    config:
+      discovery:
+        service-id: EUREKA-CONFIG-SERVER
+        enabled: true
+      profile: repo
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://eureka.springcloud.cn/eureka/
