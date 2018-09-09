@@ -1,6 +1,4 @@
 spring:
-  cache:
-    type: redis
   application:
     name: citybank
   datasource:
@@ -8,14 +6,6 @@ spring:
     url: jdbc:oracle:thin:@127.0.0.1:1521:orcl
     username: scott
     password: tiger
-  redis:
-    cluster:
-      nodes:
-      - 10.164.16.136:6379,10.164.16.136:6380,10.164.16.136:6381,10.164.16.136:6382,10.164.16.136:6383,10.164.16.136:6384
-  jedis:
-    clusterNodes: 10.164.16.136:6379,10.164.16.136:6380,10.164.16.136:6381,10.164.16.136:6382,10.164.16.136:6383,10.164.16.136:6384
-  session:
-    store-type: redis
 logging:
   level:
     org.springframework: INFO
