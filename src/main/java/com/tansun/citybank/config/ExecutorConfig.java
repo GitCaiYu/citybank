@@ -14,7 +14,7 @@ import java.util.concurrent.ThreadPoolExecutor;
 @Slf4j
 public class ExecutorConfig {
 
-    @Bean()
+    @Bean
     public Executor AsyncServiceExecutor() {
         ThreadPoolTaskExecutor executor = new ThreadPoolTaskExecutor();
         //配置核心线程数
