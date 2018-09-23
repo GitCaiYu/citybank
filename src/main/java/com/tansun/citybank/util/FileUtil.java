@@ -1,6 +1,5 @@
 package com.tansun.citybank.util;
 
-import com.baomidou.mybatisplus.mapper.EntityWrapper;
 import com.tansun.citybank.dao.BaseDao;
 import org.apache.ibatis.session.RowBounds;
 import org.springframework.beans.factory.annotation.Autowired;
