@@ -3225,3 +3225,4 @@ Using generated security password: cbdd70ab-629b-4842-b0e6-45413a98a11c
 15:01:57.009 [restartedMain] INFO  o.s.c.n.e.s.EurekaAutoServiceRegistration - Updating port to 9030
 15:01:57.012 [restartedMain] INFO  c.t.citybank.CitybankApplication - Started CitybankApplication in 12.694 seconds (JVM running for 14.641)
 15:06:56.889 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
+15:11:56.893 [AsyncResolver-bootstrap-executor-0] INFO  c.n.d.s.r.aws.ConfigClusterResolver - Resolving eureka endpoints via configuration
